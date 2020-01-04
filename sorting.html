@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        td,
+        th {
+            border: 2px solid red;
+            border-collapse: collapse;
+            border-radius: 7px;
+        }
+        
+        table {
+            text-align: center;
+            border-radius: 7px;
+            background-image: url('');
+        }
+        
+        th {
+            background-color: deepskyblue;
+            font-size: larger;
+        }
+        
+        tr:nth-child(even) {
+            background-color: orange;
+        }
+        
+        * {
+            padding: 5px;
+        }
+        
+        input {
+            box-shadow: 2px 2px 12px red;
+            width: 73%;
+            border-radius: 5px;
+            text-align: "center";
+            margin-left: 155px;
+        }
+    </style>
+    <script>
+        const searchFun = () => {
+            let filter = document.getElementById('myInput').value.toUpperCase();
+            let myTable = document.getElementById('myTable');
+            let tr = myTable.getElementsByTagName('tr');
+            for (var i = 0; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[0];
+                if (td) {
+                    let textvalue = td.textContent || td.innerHTML;
+                    if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center; color: darkblue; font-family: bold;">My Friends</h1>
+    <input type="text" align="center" placeholder="names..." name="" id="myInput" onkeyup="searchFun()">
+    <br><br>
+
+    <table id="myTable" width="75%" align="center">
+        <tr class="header">
+            <th>Name</th>
+            <th>Company</th>
+            <th>Contact Number</th>
+        </tr>
+        <tr>
+            <td>Supriya</td>
+            <td>Tech Mahendra</td>
+            <td>7845986323</td>
+        </tr>
+        <tr>
+            <td>Soumya</td>
+            <td>Infosis</td>
+            <td>4513686456</td>
+        </tr>
+        <tr>
+            <td>Radha</td>
+            <td>Google</td>
+            <td>2581479630</td>
+        </tr>
+        <tr>
+            <td>Krishna</td>
+            <td>Google</td>
+            <td>9578462133</td>
+        </tr>
+        <tr>
+            <td>Muralidhara</td>
+            <td>W3School</td>
+            <td>1478529630</td>
+        </tr>
+        <tr>
+            <td>Radhamohan</td>
+            <td>Creatic</td>
+            <td>9638527410</td>
+        </tr>
+        <tr>
+            <td>Zahir</td>
+            <td>Cricket</td>
+            <td>1548736925</td>
+        </tr>
+        <tr>
+            <td>Irfan</td>
+            <td>Base ball</td>
+            <td>4628906080</td>
+        </tr>
+        <tr>
+            <td>Gangully</td>
+            <td>All rounder</td>
+            <td>9937456097</td>
+        </tr>
+        <tr>
+            <td>Manisha</td>
+            <td>KSIT pvt ltd</td>
+            <td>3699633698</td>
+        </tr>
+        <tr>
+            <td>Amit Saha</td>
+            <td>Deshbasi</td>
+            <td>4998976459</td>
+        </tr>
+
+        <tr>
+            <td>
+                krishna Monamohana
+            </td>
+            <td>KSIT</td>
+            <td>7960987654</td>
+        </tr>
+        <tr>
+            <td>Alekha Sir</td>
+            <td>TCS</td>
+            <td>7410852963</td>
+        </tr>
+        <tr>
+            <td>Padmalochan Rout</td>
+            <td>Infosis</td>
+            <td>8529637410</td>
+        </tr>
+    </table>
+</body>
+
+</html>
